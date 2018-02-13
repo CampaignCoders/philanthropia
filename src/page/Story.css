@@ -1,0 +1,15 @@
+.storyContainer {
+    margin-bottom: 40px;
+}
+
+.story p {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+@media (min-width: 768px) {
+    .story p, .story h1, .story h2, .story img {
+        padding-left: 20px;
+        padding-right: 40px;
+    }
+}

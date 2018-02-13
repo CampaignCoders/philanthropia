@@ -1,0 +1,64 @@
+.tallypanelcontainer {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(230, 230, 230);
+    padding: 20px;
+}
+
+.tallypanelcontainer .tallypanelheading {
+    font-size: 22px;
+}
+
+.tallypanelcontainer .tallycalculations {
+    text-align: right;
+}
+
+.tallypanelcontainer .tallycalculations .tallycalculationsitem {
+    padding: 5px 0;
+}
+
+.tallypanelcontainer .tallycalculations .tallycalculationsitem.emphasis {
+    font-size: 16px;
+    border-top: 1px solid #868686;
+    padding-top: 15px;
+}
+
+.tallypanelcontainer .feeinfotext {
+    margin-top: 20px;
+    color: #868686;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.donationInputBox {
+    position: relative;
+}
+
+.donationInputBox .currencySymbol {
+    position: absolute;
+    top: 11px;
+    left: 15px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.donationInputBox .currencySymbol.error {
+    color: red;
+}
+
+.donationInputBox input {
+    box-sizing: border-box;
+    font-size: 20px;
+    padding-left: 35px;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .donationInputBox input {
+        max-width: none;
+    }
+
+    .tallypanelcontainer {
+        margin-top: 30px;
+    }
+}

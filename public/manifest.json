@@ -1,10 +1,10 @@
 {
-  "short_name": "Fundraiser",
-  "name": "Fundraiser",
+  "short_name": "Philanthropia",
+  "name": "Philanthropia",
   "version": "0.2.0",
   "author": "",
-  "description": "",
-  "homepage_url": "",
+  "description": "Raise funds",
+  "homepage_url": "https://github.com/CampaignCoders/philanthropia",
   "icons": [
     {
       "src": "favicon.ico",

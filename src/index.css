@@ -3,7 +3,7 @@ body {
     margin-top: 20px;
     padding: 0;
     font-family: 'Lato', sans-serif;
-    background-color: rgb(252, 252, 255);
+    background-color: #FDFFFC;
     color: #4C4C4C;
     font-size: 14px;
 }
@@ -25,7 +25,7 @@ form {
 }
 
 form p.helptext {
-    color: #6c6d6c;
+    color: #6d6c6c;
     font-weight: 400;
     letter-spacing: 0.025em;
 }
@@ -73,7 +73,7 @@ button.donate {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.025em;
-    background-color: rgb(121, 193, 143);
+    background-color: #C179B9;
     text-decoration: none;
     -webkit-transition: all 150ms ease;
     transition: all 150ms ease;
@@ -83,12 +83,12 @@ button.donate {
 button.donate:hover {
     color: #fff;
     cursor: pointer;
-    background-color: rgb(204, 172, 145);
+    background-color: #CC91C5;
     box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08);
 }
 
 button.donate:disabled, button.donate[disabled] {
-    background-color: rgb(100, 116, 158);
+    background-color: #9E6498;
     cursor: not-allowed;
 }
 

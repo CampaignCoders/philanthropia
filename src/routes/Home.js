@@ -67,7 +67,7 @@ class Home extends Component {
                             <button className="close" onClick={this.closeThankYouModal}>x</button>
                             <h1>Thank You!</h1>
                             <h2>Your generosity means the world to us.</h2>
-                            <p>Would you mind spreading the word via the social media and email links below?</p>
+                            <p>With your help, we have now raised <strong>${this.state.donationTotal.toLocaleString()}</strong> from <strong>{this.state.donationCount.toLocaleString()} donors</strong>! Would you mind spreading the word via the social media and email links below?</p>
                             <ShareButtons sharetext={shareText} />
                         </div>
 

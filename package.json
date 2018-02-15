@@ -1,21 +1,42 @@
 {
   "name": "philanthropia",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "0.2.0",
+  "author": "",
+  "license": "",
+  "description": "Raise funds",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CampaignCoders/philanthropia.git"
   },
-  "author": "Kayvan, Peter, Raf",
-  "license": "ISC",
+  "keywords": [
+  
+  ],
   "bugs": {
     "url": "https://github.com/CampaignCoders/philanthropia/issues"
   },
-  "homepage": "https://github.com/CampaignCoders/philanthropia#readme"
+  "dependencies": {
+    "axios": "^0.16.2",
+    "moment": "^2.18.1",
+    "query-string": "^5.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-grid-system": "^2.9.6",
+    "react-loadable": "^4.0.5",
+    "react-modal": "^3.0.4",
+    "react-moment": "^0.6.5",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.14",
+    "react-stripe-elements": "1.0.1",
+    "webfontloader": "^1.6.28"
+  },
+  "scripts": {
+    "start": "concurrently \"react-scripts start\" \"cd server && node index.js\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
 }

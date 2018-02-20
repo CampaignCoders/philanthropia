@@ -75,6 +75,7 @@ class Donate extends Component {
         return (
             <div>
                 <Navbar />
+                <div className='container'>
                 <Jumbotron title="Donate" subtitle="Enter your information to donate funds"/>
                 <Container>
                     <Row>
@@ -98,6 +99,7 @@ class Donate extends Component {
                         </Col>
                     </Row>
                 </Container>
+                </div>
                 <Footer beneficiary={AppConstants.FOOTER_BENEFICIARY} organization={AppConstants.FOOTER_ORGANIZATION} organization_subheading={AppConstants.FOOTER_ORGANIZATION_SUBHEADING} />
             </div>
         );

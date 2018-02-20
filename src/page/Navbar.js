@@ -2,21 +2,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
+
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-toggleable-md">
-        <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
-          <Link className="navbar-brand" to="/">Philanthropa
-
-          </Link>
-          <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav mr-auto">
+          <Link className="navbar-brand" to="/">Philanthropa</Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
               <li className="nav-item active">
-                <Link className="nav-link" to="/routes/Home">Home <span className="sr-only">(current)</span></Link>
+                <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/Donate">Donate</Link>

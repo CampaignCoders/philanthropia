@@ -6,6 +6,8 @@ import Hero from '../page/Hero';
 import Main from '../page/Main';
 import Footer from '../page/Footer';
 import ShareButtons from '../page/ShareButtons';
+import Navbar from '../page/Navbar';
+import Jumbotron from '../page/Jumbotron';
 
 // Utilities
 import queryString from 'query-string';
@@ -72,8 +74,12 @@ class Home extends Component {
                         </div>
 
                 </Modal>
+                <Navbar />
+                <div className='container'>
+                <Jumbotron title="Welcome" subtitle="Donate to your favorite campaign or sign in"/>
                 <Hero title={AppConstants.HERO_TITLE} heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
                 <Main story={AppConstants.HOME_STORY} story_html={AppConstants.HOME_STORY_HTML} story_use_html={AppConstants.HOME_STORY_USE_HTML} donors={this.state.donationCount} donorList={this.state.donorList} sharetext={shareText}></Main>
+                </div>
                 <Footer beneficiary={AppConstants.FOOTER_BENEFICIARY} organization={AppConstants.FOOTER_ORGANIZATION} organization_subheading={AppConstants.FOOTER_ORGANIZATION_SUBHEADING} />
             </div>
         );

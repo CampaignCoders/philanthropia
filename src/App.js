@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Loadable from 'react-loadable';
 import WebFont from 'webfontloader';
+import './App.css';
 
 // Our Routed Pages
 import Loading from "./routes/Loading";

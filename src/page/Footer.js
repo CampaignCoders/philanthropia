@@ -8,11 +8,17 @@ class Footer extends React.Component {
                 <p>
                     {this.props.beneficiary}<br />
                     {this.props.organization}<br />
-                    {this.props.organization_subheading}
+                    <span className="text-muted">Philanthropa &#169; {new Date().getFullYear()}</span>
                 </p>
+
             </footer>
         );
     }
 }
 
 export default Footer;
+
+/*                <div className="footer">
+                    <span className="text-muted">Philanthropa &#169; {new Date().getFullYear()}</span>
+                </div>
+*/

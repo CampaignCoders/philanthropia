@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import {Link} from 'react-router-dom';
 import Footer from '../page/Footer';
+import Navbar from '../page/Navbar';
+import Jumbotron from '../page/Jumbotron';
 
 // Stripe Components
 import TallyPanel from '../stripe/TallyPanel';
@@ -72,6 +74,9 @@ class Donate extends Component {
     render() {
         return (
             <div>
+                <Navbar />
+                <div className='container'>
+                <Jumbotron title="Donate" subtitle="Enter your information to donate funds"/>
                 <Container>
                     <Row>
                         <Col xs={12}>
@@ -94,6 +99,7 @@ class Donate extends Component {
                         </Col>
                     </Row>
                 </Container>
+                </div>
                 <Footer beneficiary={AppConstants.FOOTER_BENEFICIARY} organization={AppConstants.FOOTER_ORGANIZATION} organization_subheading={AppConstants.FOOTER_ORGANIZATION_SUBHEADING} />
             </div>
         );

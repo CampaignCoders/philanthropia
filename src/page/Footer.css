@@ -10,6 +10,7 @@ footer {
 
 footer p {
     align-self: flex-end;
+    color: #D1D1D1;
 }
 
 @media (min-width: 768px) {

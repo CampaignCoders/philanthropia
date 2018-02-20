@@ -22,6 +22,13 @@ const AsyncDonate = Loadable({
     timeout: 10000
 });
 
+const AsyncLogin = Loadable({
+    loader: () => import("./routes/Login"),
+    loading: Loading,
+    delay: 200,
+    timeout: 10000
+});
+
 
 class App extends Component {
     constructor(props) {
@@ -38,6 +45,7 @@ class App extends Component {
                 <div>
                     <Route exact path="/" component={AsyncHome} />
                     <Route path="/donate" component={AsyncDonate} />
+                    <Route path="/Login" component={AsyncLogin} />
                 </div>
             </Router>
         );

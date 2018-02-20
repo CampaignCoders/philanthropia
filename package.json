@@ -17,6 +17,7 @@
     "moment": "^2.18.1",
     "query-string": "^5.0.0",
     "react": "^16.0.0",
+    "react-bootcards": "^0.1.0",
     "react-dom": "^16.0.0",
     "react-grid-system": "^2.9.6",
     "react-loadable": "^4.0.5",

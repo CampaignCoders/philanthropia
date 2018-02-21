@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Peter",
+    "clicked": false,
+    "image": "https://vignette.wikia.nocookie.net/familyguy/images/c/c2/Peter_Griffin.png/revision/latest?cb=20091004155912"
+  },
+  {
+    "id": 2,
+    "name": "Stewie",
+    "clicked": false,
+    "image": "http://1.bp.blogspot.com/-8XRbGFQmGAI/Ul-jmbaEwlI/AAAAAAAAV4g/-woglwLeg8U/s1600/Stewie-Griffin-Family-Guy-psd29223.png"
+  },
+  {
+    "id": 3,
+    "name": "Joe",
+    "clicked": false,
+    "image": "https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/7/77/Joe.png/revision/latest?cb=20140419143921"
+  },
+  {
+    "id": 4,
+    "name": "Adam West",
+    "clicked": false,
+    "image": "https://vignette.wikia.nocookie.net/p__/images/6/61/Character-adam-west.png/revision/latest?cb=20150727155550&path-prefix=protagonist"
+  },
+  {
+    "id": 5,
+    "name": "Cleveland",
+    "clicked": false,
+    "image": "https://vignette.wikia.nocookie.net/familyguy/images/1/1f/Cleveland.png/revision/latest?cb=20100121115548"
+  },
+  {
+    "id": 6,
+    "name": "Lois",
+    "clicked": false,
+    "image": "https://vignette3.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/3/33/Lois.png/revision/latest?cb=20140419144013"
+  },
+  {
+    "id": 7,
+    "name": "Chris",
+    "clicked": false,
+    "image": "http://3.bp.blogspot.com/-mX0M6rLmlBw/U3G5-OFC0dI/AAAAAAAAeKw/RQLWdgsSuu4/s1600/familyGuy_Chris_dull_72.png"
+  },
+  {
+    "id": 8,
+    "name": "Brian",
+    "clicked": false,
+    "image": "http://thesop.org/attachments/2012-006/brian-34300.png"
+  },
+  {
+    "id": 9,
+    "name": "Meg",
+    "clicked": false,
+    "image": "http://3.bp.blogspot.com/-OSSxOs49G9A/Ul-jm4bL-MI/AAAAAAAAV4w/EE1nZn4Dm58/s1600/family-guy-meg-psd10241.png"
+  },
+  {
+    "id": 10,
+    "name": "Quagmire",
+    "clicked": false,
+    "image": "http://static.tvtropes.org/pmwiki/pub/images/20120908140908Glenn_Quagmire_7213.png"
+  },
+  {
+    "id": 11,
+    "name": "Consuela",
+    "clicked": false,
+    "image": "https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/1/15/Consuela.png/revision/latest?cb=20140419143729"
+  },
+  {
+    "id": 12,
+    "name": "Mort",
+    "clicked": false,
+    "image": "https://vignette.wikia.nocookie.net/p__/images/a/a6/Mort_Goldman.png/revision/latest?cb=20150524125305&path-prefix=protagonist"
+  }
+]

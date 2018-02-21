@@ -8,6 +8,7 @@ import Footer from '../page/Footer';
 import ShareButtons from '../page/ShareButtons';
 import Navbar from '../page/Navbar';
 import Jumbotron from '../page/Jumbotron';
+// import ListDetail from '../page/ListDetail';
 
 // Utilities
 import queryString from 'query-string';

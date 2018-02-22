@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+//import { LinkContainer } from 'react-router-bootstrap';
 import './Navbar.css';
+//import logo from './images/philanthropa-transparent.png';
 
 
 class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="container">
-          <Link className="navbar-brand" to="/">Philanthropa</Link>
+        <div className="container"> 
+          <Link className="navbar-brand" to="/">
+          <img className="logo" src="./philanthropa-transparent.png" alt="p-logo"/>
+          </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

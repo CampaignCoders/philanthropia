@@ -5,6 +5,11 @@
   color: #333;
 }
 
+.logo {
+  width: 175px;
+  
+}
+
 a {
   color: #aaa;
   font-weight: 200;

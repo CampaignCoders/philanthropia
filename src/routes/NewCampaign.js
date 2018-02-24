@@ -8,6 +8,12 @@ import Jumbotron from '../page/Jumbotron';
 // Application Constants
 import AppConstants from "../constants.js";
 
+const onFormSubmit = (e) => {
+	e.preventDefault();
+
+	const option = e.target.elements.campaignName.value;
+};
+
 class NewCampaign extends Component {
 
     
@@ -22,9 +28,34 @@ class NewCampaign extends Component {
                     <Row>
                         <Col xs={12}>
                             <h1>New Campaign</h1>
+                            <div>
+                            <form onSubmit={onFormSubmit} id="start-campaign">
+                                <ol>
+                                    <label>Campaign Name</label><br/>
+                                    <input type="text" name="campaignName" />
+                                </ol>
+                                <ol>
+                                    <label>Campaign $ Goal</label><br/>
+                                    <input type="text" name="campaignGoal" />
+                                </ol>
+                                <ol>
+                                    <label>Campaign Expiration</label><br/>
+                                    <input type="text" name="campaignExpiration" />
+                                </ol>
+                                <ol>
+                                    <label>Campaign Image</label><br/>
+                                    <input type="text" name="campaignImage" />
+                                </ol>
+                                <ol>
+                                    <button>Star Campaign</button>
+                                </ol>
+                            </form>
+                        </div>
+
                             <Link to="/">
                                 &laquo; Return Home
                             </Link>
+
                         </Col>
                     </Row>
                     <Row>

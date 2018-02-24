@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
+import { Container, Row, Col } from 'react-grid-system';
 
 // Page Components
 import Hero from '../page/Hero';
@@ -64,22 +65,27 @@ class Home extends Component {
                     className="thankYouModal"
                     overlayClassName="thankYouOverlay"
                     contentLabel="Thank You Popup Window"
-                    >
-
-                        <div className="thankYouModalBody">
-                            <button className="close" onClick={this.closeThankYouModal}>x</button>
-                            <h1>Thank You!</h1>
-                            <h2>Your generosity means the world to us.</h2>
-                            <p>With your help, we have now raised <strong>${this.state.donationTotal.toLocaleString()}</strong> from <strong>{this.state.donationCount.toLocaleString()} donors</strong>! Would you mind spreading the word via the social media and email links below?</p>
-                            <ShareButtons sharetext={shareText} />
-                        </div>
+                >
+                    <div className="thankYouModalBody">
+                        <button className="close" onClick={this.closeThankYouModal}>x</button>
+                        <h1>Thank You!</h1>
+                        <h2>Your generosity means the world to us.</h2>
+                        <p>With your help, we have now raised <strong>${this.state.donationTotal.toLocaleString()}</strong> from <strong>{this.state.donationCount.toLocaleString()} donors</strong></p>
+                    </div>
 
                 </Modal>
                 <Navbar />
                 <div className='container'>
                 <Jumbotron title="Welcome" subtitle="Donate to your favorite campaign or sign in"/>
-                <Hero title={AppConstants.HERO_TITLE} heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
-                <Main story={AppConstants.HOME_STORY} story_html={AppConstants.HOME_STORY_HTML} story_use_html={AppConstants.HOME_STORY_USE_HTML} donors={this.state.donationCount} donorList={this.state.donorList} sharetext={shareText}></Main>
+                <Container> 
+                    <h1>{AppConstants.HERO_TITLE}</h1>
+                    <h2>Browse our list of fundraising campaigns for your donation</h2>
+                </Container>
+                <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
+                </div>
+                <div className="container">
+                    <h3>Would you mind spreading the word via the social media and email links below?</h3>
+                    <ShareButtons sharetext={shareText} />
                 </div>
                 <Footer beneficiary={AppConstants.FOOTER_BENEFICIARY} organization={AppConstants.FOOTER_ORGANIZATION} organization_subheading={AppConstants.FOOTER_ORGANIZATION_SUBHEADING} />
             </div>

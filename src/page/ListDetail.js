@@ -2,7 +2,7 @@ import React from 'react';
 import {ListGroup, ListGroupItem, Row, Col} from 'react-bootstrap';
 import {List, Card, ListGroupItemHeader, ListGroupItemText} from 'react-bootcards';
 
-class ListDetail extends React.Component {
+class ListDetail extends Component {
   render () {
     return (
         <div>

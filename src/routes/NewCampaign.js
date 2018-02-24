@@ -16,8 +16,6 @@ const onFormSubmit = (e) => {
 
 class NewCampaign extends Component {
 
-    
-
     render() {
         return (
             <div>
@@ -47,7 +45,7 @@ class NewCampaign extends Component {
                                     <input type="text" name="campaignImage" />
                                 </ol>
                                 <ol>
-                                    <button>Star Campaign</button>
+                                    <button>Start Campaign</button>
                                 </ol>
                             </form>
                         </div>

@@ -11,7 +11,7 @@ import AppConstants from "../constants.js";
 const onFormSubmit = (e) => {
 	e.preventDefault();
 
-	const option = e.target.elements.campaignName.value;
+	const option = e.target.elements.username.value;
 };
 
 
@@ -28,25 +28,37 @@ class Login extends Component {
                         <Col xs={12}>
                             <h1>Login</h1>
                             <div>
-                            <form onSubmit={onFormSubmit} id="start-campaign">
+                            <form onSubmit={onFormSubmit} id="New-User">
                                 <ol>
-                                    <label>Campaign Name</label><br/>
-                                    <input type="text" name="campaignName" />
+                                    <label>First Name</label><br/>
+                                    <input type="text" name="firstname" />
                                 </ol>
                                 <ol>
-                                    <label>Campaign $ Goal</label><br/>
-                                    <input type="text" name="campaignGoal" />
+                                    <label>Last Name</label><br/>
+                                    <input type="text" name="lastname" />
                                 </ol>
                                 <ol>
-                                    <label>Campaign Expiration</label><br/>
-                                    <input type="text" name="campaignExpiration" />
+                                    <label>Job Title or role</label><br/>
+                                    <input type="text" name="title" />
                                 </ol>
                                 <ol>
-                                    <label>Campaign Image</label><br/>
-                                    <input type="text" name="campaignImage" />
+                                    <label>Email address</label><br/>
+                                    <input type="text" name="email" />
                                 </ol>
                                 <ol>
-                                    <button>Star Campaign</button>
+                                    <label>Mobile Number</label><br/>
+                                    <input type="text" name="mobile" />
+                                </ol>
+                                <ol>
+                                    <label>Create a Username</label><br/>
+                                    <input type="text" name="username" />
+                                </ol>
+                                <ol>
+                                    <label>Create a Password</label><br/>
+                                    <input type="text" name="password" />
+                                </ol>
+                                <ol>
+                                    <button>Create Login</button>
                                 </ol>
                             </form>
                         </div>

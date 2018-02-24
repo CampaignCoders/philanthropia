@@ -9,7 +9,7 @@ import Footer from '../page/Footer';
 import ShareButtons from '../page/ShareButtons';
 import Navbar from '../page/Navbar';
 import Jumbotron from '../page/Jumbotron';
-// import ListDetail from '../page/ListDetail';
+//import ListDetail from '../page/ListDetail';
 
 // Utilities
 import queryString from 'query-string';
@@ -80,6 +80,9 @@ class Home extends Component {
                 <Container> 
                     <h1>{AppConstants.HERO_TITLE}</h1>
                     <h2>Browse our list of fundraising campaigns for your donation</h2>
+                </Container>
+                <Container>
+
                 </Container>
                 <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
                 </div>

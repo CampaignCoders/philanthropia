@@ -1,3 +1,5 @@
 node_modules
 LICENSE.md
 server/node_modules
+.env
+

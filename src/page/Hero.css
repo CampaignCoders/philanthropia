@@ -36,7 +36,7 @@
 }
 
 .heroimagecontainer img {
-    width: 100%;
+    width: 50%;
 }
 
 @media (max-width: 767px) {

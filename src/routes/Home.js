@@ -6,6 +6,8 @@ import { Container } from 'react-grid-system';
 import Hero from '../page/Hero';
 import Main from '../page/Main';
 import Footer from '../page/Footer';
+import CampaignCard from "../components/CampaignCard";
+import campaigns from "../campaigns.json";
 import Wrapper from "../components/Wrapper";
 import ShareButtons from '../page/ShareButtons';
 import Navbar from '../page/Navbar';
@@ -85,6 +87,7 @@ class Home extends Component {
                 <Wrapper>
                 <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
                 <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
+                
                 </Wrapper>
                 </div>
                 <div className="container">

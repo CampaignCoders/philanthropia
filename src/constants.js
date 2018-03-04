@@ -13,10 +13,7 @@ const AppConstants = {
     PAYMENT_SERVER_URL: "http://localhost:3001",
     HERO_TITLE: "Help our organization!",
     HERO_IMAGE: heroimage,
-    HOME_STORY: `We welcome your donations.
-
-
-    `,
+    HOME_STORY: `We welcome your donations.`,
     FOOTER_BENEFICIARY: "Our Customer",
     FOOTER_ORGANIZATION: "School, Church, Club",
     FOOTER_ORGANIZATION_SUBHEADING: "non-profit"

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import {Link} from 'react-router-dom';
-import Footer from '../page/Footer';
-import Navbar from '../page/Navbar';
-import Jumbotron from '../page/Jumbotron';
+import Footer from '../components/Footer/Footer';
+import Navbar from '../components/Navbar/Navbar';
+import Jumbotron from '../components/Jumbotron/Jumbotron';
 
 // Application Constants
 import AppConstants from "../constants.js";

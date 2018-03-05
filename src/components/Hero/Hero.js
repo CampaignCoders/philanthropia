@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import './Hero.css';
 
-import DonationTracker from './DonationTracker';
+import DonationTracker from '../DonationTracker/DonationTracker';
 
 class Hero extends React.Component {
     render() {

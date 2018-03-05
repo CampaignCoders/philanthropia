@@ -3,16 +3,16 @@ import Modal from 'react-modal';
 import { Container } from 'react-grid-system';
 
 // Page Components
-import Hero from '../page/Hero';
-//import Main from '../page/Main';
-import Footer from '../page/Footer';
-//import CampaignCard from "../components/CampaignCard";
+import Hero from '../components/Hero/Hero';
+//import Main from '../components/Main/Main';
+import Footer from '../components/Footer/Footer';
+//import CampaignCard from "../components/CampaignCard/CampaignCard";
 //import campaigns from "../campaigns.json";
-import Wrapper from "../components/Wrapper";
-import ShareButtons from '../page/ShareButtons';
-import Navbar from '../page/Navbar';
-import Jumbotron from '../page/Jumbotron';
-//import ListDetail from '../page/ListDetail';
+import Wrapper from "../components/Wrapper/Wrapper";
+import ShareButtons from '../components/ShareButtons/ShareButtons';
+import Navbar from '../components/Navbar/Navbar';
+import Jumbotron from '../components/Jumbotron/Jumbotron';
+//import ListDetail from '../components/ListDetail/ListDetail';
 
 // Utilities
 import queryString from 'query-string';

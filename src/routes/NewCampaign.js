@@ -11,7 +11,7 @@ import AppConstants from "../constants.js";
 const onFormSubmit = (e) => {
 	e.preventDefault();
 
-	const option = e.target.elements.campaignName.value;
+	//const option = e.target.elements.campaignName.value;
 };
 
 class NewCampaign extends Component {

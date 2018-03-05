@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const routes = require("./routes");
 
 // const cors = require('cors');
@@ -43,5 +43,5 @@ mongoose.connect(
 
 
 app.listen(PORT, function () {
-    console.log('🌎 ==> Fundraiser Server listening on PORT ${PORT}!');
+    console.log('🌎 ==> Mongoose Server listening on PORT ${PORT}!');
 });

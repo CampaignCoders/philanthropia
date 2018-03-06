@@ -17,9 +17,14 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
+
+
 AWS.config.update({
-    region: "us-east-1",
-});
+    region: 'us-east-2',
+   
+  });
+  
+
 
 app.get("/api/donations/list/", function (req, res) {
 

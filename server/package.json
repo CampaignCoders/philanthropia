@@ -4,7 +4,8 @@
   "description": "Server backend for the Fundraiser app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "react-scripts build"
   },
   "repository": {
     "type": "git",
@@ -16,18 +17,21 @@
   "bugs": {
     "url": "https://github.com/CampaignCoders/philanthropia"
   },
-  "homepage": "",
+  "homepage": "https://google.com",
   "dependencies": {
     "aws-sdk": "^2.114.0",
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
-    "mongoose": "^5.0.6",
     "moment": "^2.18.1",
+    "mongoose": "^5.0.6",
     "morgan": "^1.9.0",
+    "nodemon": "^1.17.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.5.0",

@@ -1,0 +1,19 @@
+{
+  "short_name": "Philanthropia",
+  "name": "Philanthropia",
+  "version": "0.2.0",
+  "author": "",
+  "description": "Raise funds",
+  "homepage_url": "https://github.com/CampaignCoders/philanthropia",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#56445D",
+  "background_color": "#FDFFFC"
+}

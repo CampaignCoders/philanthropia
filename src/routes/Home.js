@@ -6,8 +6,6 @@ import { Container } from 'react-grid-system';
 import Hero from '../page/Hero';
 //import Main from '../page/Main';
 import Footer from '../page/Footer';
-//import CampaignCard from "../components/CampaignCard";
-//import campaigns from "../campaigns.json";
 import Wrapper from "../components/Wrapper";
 import ShareButtons from '../page/ShareButtons';
 import Navbar from '../page/Navbar';

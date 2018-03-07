@@ -86,7 +86,6 @@ class Home extends Component {
                 </Container>
                 <Wrapper>
                 <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
-                <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
                 
                 </Wrapper>
                 </div>

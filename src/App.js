@@ -43,6 +43,12 @@ const AsyncCreate = Loadable({
     timeout: 10000
 });
 
+const AsyncDetail = Loadable({
+    loader: () => import("./routes/Detail"),
+    loading: Loading,
+    delay: 200,
+    timeout: 10000
+});
 
 class App extends Component {
     constructor(props) {
@@ -62,6 +68,7 @@ class App extends Component {
                     <Route path="/Login" component={AsyncLogin} />
                     <Route path="/Register" component={AsyncCreate} />
                     <Route path="/NewCampaign" component={AsyncNewCampaign}/>
+                    <Route path="/Details/:id" component={AsyncDetail}/>
                 </div>
             </Router>
         );

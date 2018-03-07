@@ -83,8 +83,9 @@ class Home extends Component {
                     <h1>{AppConstants.HERO_TITLE}</h1>
                     <h2>Browse our list of fundraising campaigns for your donation</h2>
                 </Container>
-                <Wrapper>
                 <Campaigns />
+                <Wrapper>
+
                 <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
                 
                 </Wrapper>

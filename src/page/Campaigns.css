@@ -13,6 +13,7 @@
     font-size: 30px;
 }
 
+
 @media (min-width: 992px) {
     .campaigns {
         display: flex;
@@ -40,7 +41,7 @@
 }
 
 @media (max-width: 767px) {
-    .hero {
+    .campaigns {
         border-left: none;
         border-right: none;
     }

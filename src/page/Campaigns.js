@@ -1,13 +1,12 @@
 import React from 'react';
-import { Table, Menu, Icon } from 'semantic-ui-react';
+import { Table, Menu, Image,Header, Icon } from 'semantic-ui-react';
 import { get } from 'axios';
 import times from 'lodash.times';
 import Page from './Page';
 
-import { Container, Row, Col } from 'react-grid-system';
 import './Campaigns.css';
 
-import DonationTracker from './DonationTracker';
+//import DonationTracker from './DonationTracker';
 
 const TOTAL_PER_PAGE = 10;
 
@@ -81,25 +80,33 @@ class Campaigns extends React.Component {
     const startIndex = page * TOTAL_PER_PAGE;
 
     return (
-      <Page title="campaigns">
-        <Table celled striped>
+      <Page title="Campaigns">
+        <Table celled striped size='large'>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell >Name</Table.HeaderCell>
               <Table.HeaderCell>Purpose</Table.HeaderCell>
               <Table.HeaderCell>Goal</Table.HeaderCell>
               <Table.HeaderCell>Expiration Date</Table.HeaderCell>
-              <Table.HeaderCell>Image</Table.HeaderCell>
+              <Table.HeaderCell>Donate Button</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
             {campaigns.slice(startIndex, startIndex + TOTAL_PER_PAGE).map(user =>
               (<Table.Row key={campaigns.id}>
-                <Table.Cell>{campaigns.campaignName}</Table.Cell>
+                <Table.Cell>
+                <Header as='h4' image>
+                  <Image src={campaigns.campaignImage} />
+                  <Header.Content>{campaigns.campaignName}
+              <Header.Subheader>campaign mgr placeholder</Header.Subheader>
+            </Header.Content>
+          </Header>
+                
+                </Table.Cell>
                 <Table.Cell>{campaigns.campaignPurpose}</Table.Cell>
                 <Table.Cell>{campaigns.campaignGoal}</Table.Cell>
                 <Table.Cell>{campaigns.campaignExpiration}</Table.Cell>
-                <Table.Cell>{campaigns.campaignImage}</Table.Cell>
+                <Table.Cell></Table.Cell>
               </Table.Row>),
             )}
           </Table.Body>
@@ -123,21 +130,7 @@ class Campaigns extends React.Component {
             </Table.Row>
           </Table.Footer>
         </Table>
-        <Container>
-                <Row className="campaigns">
-                    <Col xs={12} lg={8} style={{ padding: 0}} className="campaignimagecontainer">
-                        <img src={this.props.heroimage} alt={this.props.title} />
-                    </Col>
-                    <Col xs={12} lg={4} style={{ padding: 0}}>
-                        <p> placeholder for DonationTracker</p>
-                    </Col>
-                </Row>
-                <Row className="titleRow">
-                    <Col xs={12} className="titleCol">
-                        <h1>{this.props.title}</h1>
-                    </Col>
-                </Row>
-            </Container>
+        
       </Page>
     );
   }

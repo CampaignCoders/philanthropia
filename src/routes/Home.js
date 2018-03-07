@@ -11,6 +11,7 @@ import ShareButtons from '../page/ShareButtons';
 import Navbar from '../page/Navbar';
 import Jumbotron from '../page/Jumbotron';
 //import ListDetail from '../page/ListDetail';
+import Campaigns from '../page/Campaigns';
 
 // Utilities
 import queryString from 'query-string';
@@ -83,6 +84,7 @@ class Home extends Component {
                     <h2>Browse our list of fundraising campaigns for your donation</h2>
                 </Container>
                 <Wrapper>
+                <Campaigns />
                 <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
                 
                 </Wrapper>

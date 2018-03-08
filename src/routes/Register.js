@@ -18,6 +18,10 @@ class Create extends Component {
     constructor() {
         super();
         this.state = {
+          firstname: '',
+          lastname: '',
+          phonenumber: '',
+          organization: '',
           username: '',
           password: ''
         };
@@ -31,9 +35,9 @@ class Create extends Component {
       onSubmit = (e) => {
         e.preventDefault();
     
-        const { username, password } = this.state;
+        const { firstname, lastname, phonenumber, organization, username, password } = this.state;
         console.log(username,password);
-        axios.post('/api/auth/register', { username, password })
+        axios.post('/api/auth/register', { firstname, lastname, phonenumber, organization, username, password })
           .then((result) => {
               console.log(result)
             this.props.history.push("/login")
@@ -42,7 +46,7 @@ class Create extends Component {
       }
 
     render() {
-        const { username, password } = this.state;
+        const { firstname, lastname, phonenumber, organization, username, password } = this.state;
         return (
             <div>
                 <Navbar />
@@ -54,11 +58,19 @@ class Create extends Component {
                             <h1>New User Setup</h1>
                             <div class="container">
                                 <form class="form-signin" onSubmit={this.onSubmit}>
-                                          <label for="inputEmail" class="sr-only">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
-                                        <label for="inputPassword" class="sr-only">Password</label>
-                                        <input type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
-                                        <button class="donate" type="submit">Register</button>
+                                    <label for="inputFirstName" class="sr-only">First Name</label>
+                                    <input type="text" class="form-control" placeholder="First Name" name="firstname" value={firstname} onChange={this.onChange} required/>
+                                    <label for="inputLastName" class="sr-only">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Last Name" name="lastname" value={lastname} onChange={this.onChange} required/>
+                                    <label for="InputPhoneNumber" class="sr-only">Phone Number</label>
+                                    <input type="number" class="form-control" placeholder="Phone Number" name="phonenumber" value={phonenumber} onChange={this.onChange} required/>
+                                    <label for="inputOrganization" class="sr-only">Organization</label>
+                                    <input type="text" class="form-control" placeholder="Organization" name="organization" value={organization} onChange={this.onChange} required/>        
+                                    <label for="inputEmail" class="sr-only">Email address</label>
+                                    <input type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
+                                    <label for="inputPassword" class="sr-only">Password</label>
+                                    <input type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
+                                    <button class="donate" type="submit">Register</button>
                                 </form>
                           </div>
 

@@ -17,6 +17,10 @@ module.exports = function (mongoose) {
       res.json({success: false, msg: 'Please pass username and password.'});
     } else {
       var newUser = new User({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        phonenumber: req.body.phonenumber,
+        organization: req.body.organization,
         username: req.body.username,
         password: req.body.password
       });

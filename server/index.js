@@ -9,7 +9,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const auth = require('../routes/auth');
-
+const campaign = require('../routes/campaign');
 const ServerConstants = require("./constants");
 
 const ourStripeSecretKey = ServerConstants.STRIPE_TEST_MODE ? ServerConstants.STRIPE_SK_TEST : ServerConstants.STRIPE_SK_PROD;
@@ -141,6 +141,7 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api/auth', auth(mongoose));
+app.use('/api/NewCampaign', campaign(mongoose));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

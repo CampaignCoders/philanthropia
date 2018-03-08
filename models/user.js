@@ -5,9 +5,24 @@ const bcrypt = require('bcrypt-nodejs');
 module.exports = function (mongoose) {
 const Schema = mongoose.Schema;
     const UserSchema = new Schema({
+        firstname: {
+            type: String,
+            required: true
+        },
+        lastname: {
+            type: String,
+            required: true
+        },
+        phonenumber: {
+            type: String,
+            required: true
+        },
+        organization: {
+            type: String,
+            required: true
+        },
         username: {
               type: String,
-              unique: true,
               required: true
           },
         password: {

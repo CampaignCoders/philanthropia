@@ -5,18 +5,46 @@ import Footer from '../page/Footer';
 import Navbar from '../page/Navbar';
 import Jumbotron from '../page/Jumbotron';
 
+import axios from 'axios';
+import ReactDOM from 'react-dom';
+
+
 // Application Constants
 import AppConstants from "../constants.js";
 
-const onFormSubmit = (e) => {
-	e.preventDefault();
-
-	const option = e.target.elements.campaignName.value;
-};
 
 class NewCampaign extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            campaignName: '',
+            campaignPurpose: '',
+            campaignOwner: '',
+            campaignGoal: '',
+            campaignExpirationDate: ''
+        };
+      }
+      onChange = (e) => {
+        const state = this.state
+        state[e.target.name] = e.target.value;
+        this.setState(state);
+      }
+    
+      onSubmit = (e) => {
+        e.preventDefault();
+    
+        const { campaignName, campaignPurpose, campaignOwner, campaignGoal, campaignExpirationDate } = this.state;
+        axios.post('/api/NewCampaign/NewCampaign', { campaignName, campaignPurpose, campaignOwner, campaignGoal, campaignExpirationDate })
+          .then((result) => {
+              console.log(result)
+            this.props.history.push("/")
+          }).catch(function(err) {
+              console.log(err)});
+      }
+
     render() {
+        const { campaignName, campaignPurpose, campaignOwner, campaignGoal, campaignExpirationDate } = this.state;
         return (
             <div>
                 <Navbar />
@@ -25,30 +53,23 @@ class NewCampaign extends Component {
                 <Container>
                     <Row>
                         <Col xs={12}>
-                            <h1>New Campaign</h1>
-                            <div>
-                            <form onSubmit={onFormSubmit} id="start-campaign">
-                                <ol>
-                                    <label>Campaign Name</label><br/>
-                                    <input type="text" name="campaignName" />
-                                </ol>
-                                <ol>
-                                    <label>Campaign $ Goal</label><br/>
-                                    <input type="text" name="campaignGoal" />
-                                </ol>
-                                <ol>
-                                    <label>Campaign Expiration</label><br/>
-                                    <input type="text" name="campaignExpiration" />
-                                </ol>
-                                <ol>
-                                    <label>Campaign Image</label><br/>
-                                    <input type="text" name="campaignImage" />
-                                </ol>
-                                <ol>
-                                    <button>Start Campaign</button>
-                                </ol>
-                            </form>
-                        </div>
+                            <h1>New User Setup</h1>
+                            <div class="container">
+                                <form class="form-signin" onSubmit={this.onSubmit}>
+                                    <label for="inputCampaignName" class="sr-only">Campaign Name</label>
+                                    <input type="text" class="form-control" placeholder="Campaign Name" name="campaignName" value={campaignName} onChange={this.onChange} required/>
+                                    <label for="inputCampaignPurpose" class="sr-only">Campaign Purpose</label>
+                                    <input type="text" class="form-control" placeholder="Campaign Purpose" name="campaignPurpose" value={campaignPurpose} onChange={this.onChange} required/>
+                                    <label for="InputCampaignOwner" class="sr-only">Campaign Owner</label>
+                                    <input type="text" class="form-control" placeholder="Campaign Owner" name="campaignOwner" value={campaignOwner} onChange={this.onChange} required/>
+                                    <label for="inputCampaignGoal" class="sr-only">Campaign Goal</label>
+                                    <input type="text" class="form-control" placeholder="Campaign Goal" name="campaignGoal" value={campaignGoal} onChange={this.onChange} required/>        
+                                    <p> Expiration Date </p>
+                                    <label for="inputCampaignExpirationDate" class="sr-only">Campaign Expiration Date</label>
+                                    <input type="date" class="form-control" placeholder="Campaign Expiration Date" name="campaignExpirationDate" value={campaignExpirationDate} onChange={this.onChange} required/>
+                                    <button class="donate" type="submit">Start Campaign</button>
+                                </form>
+                          </div>
 
                             <Link to="/">
                                 &laquo; Return Home

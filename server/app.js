@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -50,3 +51,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+*/

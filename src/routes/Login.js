@@ -6,7 +6,7 @@ import Navbar from '../page/Navbar';
 import Jumbotron from '../page/Jumbotron';
 
 import axios from 'axios';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 // Application Constants
 import AppConstants from "../constants.js";
@@ -27,6 +27,7 @@ class Login extends Component {
         const state = this.state
         state[e.target.name] = e.target.value;
         this.setState(state);
+        
       }
     
       onSubmit = (e) => {
@@ -37,8 +38,8 @@ class Login extends Component {
         axios.post('/api/auth/login', { username, password })
           .then((result) => {
             localStorage.setItem('jwtToken', result.data.token);
-            this.setState({ message: '' });
-            this.props.history.push('/')
+            this.setState({ message: ' ' });
+            this.props.history.push('/');
           })
           .catch((error) => {
             if(error.response.status === 401) {
@@ -47,9 +48,6 @@ class Login extends Component {
           });
       }
     
-    
-
-
 
     render() {
         const { username, password, message } = this.state;

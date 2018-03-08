@@ -6,13 +6,12 @@ import { Container } from 'react-grid-system';
 import Hero from '../page/Hero';
 //import Main from '../page/Main';
 import Footer from '../page/Footer';
-//import CampaignCard from "../components/CampaignCard";
-//import campaigns from "../campaigns.json";
 import Wrapper from "../components/Wrapper";
 import ShareButtons from '../page/ShareButtons';
 import Navbar from '../page/Navbar';
 import Jumbotron from '../page/Jumbotron';
 //import ListDetail from '../page/ListDetail';
+import Campaigns from '../page/Campaigns';
 
 // Utilities
 import queryString from 'query-string';
@@ -84,8 +83,9 @@ class Home extends Component {
                     <h1>{AppConstants.HERO_TITLE}</h1>
                     <h2>Browse our list of fundraising campaigns for your donation</h2>
                 </Container>
+                <Campaigns />
                 <Wrapper>
-                <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
+
                 <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
                 
                 </Wrapper>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Loadable from 'react-loadable';
 import WebFont from 'webfontloader';
@@ -43,6 +43,12 @@ const AsyncCreate = Loadable({
     timeout: 10000
 });
 
+const AsyncDetail = Loadable({
+    loader: () => import("./routes/Detail"),
+    loading: Loading,
+    delay: 200,
+    timeout: 10000
+});
 
 class App extends Component {
     constructor(props) {
@@ -57,11 +63,14 @@ class App extends Component {
         return (
             <Router>
                 <div>
+                    <Switch>
                     <Route exact path="/" component={AsyncHome} />
                     <Route path="/donate" component={AsyncDonate} />
                     <Route path="/Login" component={AsyncLogin} />
                     <Route path="/Register" component={AsyncCreate} />
                     <Route path="/NewCampaign" component={AsyncNewCampaign}/>
+                    <Route path="/Details/:id" component={AsyncDetail}/>
+                    </Switch>
                 </div>
             </Router>
         );

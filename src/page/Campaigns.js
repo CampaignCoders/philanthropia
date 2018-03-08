@@ -36,7 +36,7 @@ class Campaigns extends React.Component {
   }
 
   getCampaigns() {
-    get('/api/campaigns')
+    get('/api/newcampaign')
       .then(({ data }) => {
         const { campaigns } = data;
         const totalPages = Math.ceil(campaigns.length / TOTAL_PER_PAGE);
@@ -84,7 +84,7 @@ class Campaigns extends React.Component {
         <Table celled striped size='large'>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell >Name</Table.HeaderCell>
+              <Table.HeaderCell>Name</Table.HeaderCell>
               <Table.HeaderCell>Purpose</Table.HeaderCell>
               <Table.HeaderCell>Goal</Table.HeaderCell>
               <Table.HeaderCell>Expiration Date</Table.HeaderCell>

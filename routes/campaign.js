@@ -27,6 +27,15 @@ module.exports = function (mongoose) {
       });
     });
 
+    router.get("/NewCampaign", function(req,res){
+        Campaign.findAll().then((err, data)=> {
+          res.json(data);
+        }
+        )
+
+
+    })
+
   return router;
 
 };

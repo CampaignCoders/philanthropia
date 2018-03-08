@@ -6,7 +6,7 @@ import { Container } from 'react-grid-system';
 import Hero from '../page/Hero';
 //import Main from '../page/Main';
 import Footer from '../page/Footer';
-import Wrapper from "../components/Wrapper";
+//import Wrapper from "../components/Wrapper";
 import ShareButtons from '../page/ShareButtons';
 import Navbar from '../page/Navbar';
 import Jumbotron from '../page/Jumbotron';
@@ -83,12 +83,10 @@ class Home extends Component {
                     <h1>{AppConstants.HERO_TITLE}</h1>
                     <h2>Browse our list of fundraising campaigns for your donation</h2>
                 </Container>
+          
                 <Campaigns />
-                <Wrapper>
+               
 
-                <Hero heroimage={heroimage} balance={this.state.donationTotal} donors={this.state.donationCount} />
-                
-                </Wrapper>
                 </div>
                 <div className="container">
                     <h3>Would you mind spreading the word via the social media and email links below?</h3>

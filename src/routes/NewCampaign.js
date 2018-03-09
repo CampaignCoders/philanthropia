@@ -6,7 +6,7 @@ import Navbar from '../page/Navbar';
 import Jumbotron from '../page/Jumbotron';
 
 import axios from 'axios';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 
 // Application Constants
@@ -70,19 +70,9 @@ class NewCampaign extends Component {
                                     <button class="donate" type="submit">Start Campaign</button>
                                 </form>
                           </div>
-
                             <Link to="/">
                                 &laquo; Return Home
                             </Link>
-
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} md={4} lg={3} push={{md: 8, lg: 9}}>
-                            
-                        </Col>
-                        <Col xs={12} md={8} lg={9} pull={{md:4, lg: 3}}>
-   
                         </Col>
                     </Row>
                 </Container>

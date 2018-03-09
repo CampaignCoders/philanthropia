@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { Container } from 'react-grid-system';
 
 // Page Components
-import Hero from '../page/Hero';
+//import Hero from '../page/Hero';
 //import Main from '../page/Main';
 import Footer from '../page/Footer';
 //import Wrapper from "../components/Wrapper";
@@ -21,7 +21,7 @@ import AppConstants from "../constants.js";
 
 const shareText = "Check this out: " + AppConstants.HERO_TITLE;
 
-const heroimage = AppConstants.HERO_IMAGE;
+//const heroimage = AppConstants.HERO_IMAGE;
 
 class Home extends Component {
     constructor(props) {

@@ -89,6 +89,7 @@ class Campaigns extends React.Component {
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Owner</Table.HeaderCell>
               <Table.HeaderCell>Purpose</Table.HeaderCell>
               <Table.HeaderCell>Goal</Table.HeaderCell>
               <Table.HeaderCell>Expiration Date</Table.HeaderCell>
@@ -99,6 +100,7 @@ class Campaigns extends React.Component {
             {campaigns.slice(startIndex, startIndex + TOTAL_PER_PAGE).map(campaigns =>
               (<Table.Row key={campaigns.id}>
                 <Table.Cell>{campaigns.campaignName}</Table.Cell>
+                <Table.Cell>{campaigns.campaignOwner}</Table.Cell>
                 <Table.Cell>{campaigns.campaignPurpose}</Table.Cell>
                 <Table.Cell>{campaigns.campaignGoal}</Table.Cell>
                 <Table.Cell>{moment(campaigns.campaignExpirationDate).format('MM-DD-YYYY')}</Table.Cell>
@@ -128,7 +130,7 @@ class Campaigns extends React.Component {
             </Table.Row>
           </Table.Footer>
         </Table>
-        
+
       </Page>
     );
   }

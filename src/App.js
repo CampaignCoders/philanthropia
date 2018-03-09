@@ -69,7 +69,7 @@ class App extends Component {
                     <Route path="/Login" component={AsyncLogin} />
                     <Route path="/Register" component={AsyncCreate} />
                     <Route path="/NewCampaign" component={AsyncNewCampaign}/>
-                    <Route path="/Details/:id" component={AsyncDetail}/>
+                    <Route path="/campaigns/:id" component={AsyncDetail}/>
                     </Switch>
                 </div>
             </Router>

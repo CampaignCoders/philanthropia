@@ -78,7 +78,7 @@ class Home extends Component {
                 </Modal>
                 <Navbar />
                 <div className='container'>
-                <Jumbotron title="Welcome" subtitle="Donate to your favorite campaign or sign in"/>
+                <Jumbotron title="Welcome" subtitle="Donate to your favorite campaign or Login to create a new campaign"/>
                 <Container> 
                     <h1>{AppConstants.HERO_TITLE}</h1>
                     <h2>Browse our list of fundraising campaigns for your donation</h2>

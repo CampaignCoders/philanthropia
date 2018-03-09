@@ -48,7 +48,7 @@ class Campaigns extends React.Component {
         this.setState({
           campaigns: campaigns,
           page: 0,
-          totalPages,
+          totalPages:0,
         });
       });
   }
@@ -71,11 +71,11 @@ class Campaigns extends React.Component {
     this.setState({ page: page + 1 });
   }
 
-  handleDelete(userId) {
+  handleDelete(campaignsId) {
     const { campaigns } = this.state;
 
     this.setState({
-      campaigns: campaigns.filter(u => u.id !== userId),
+      campaigns: campaigns.filter(u => u.id !== campaignsId),
     });
   }
 
@@ -100,7 +100,7 @@ class Campaigns extends React.Component {
             {campaigns.slice(startIndex, startIndex + TOTAL_PER_PAGE).map(campaigns =>
               (<Table.Row key={campaigns.id}>
                 <Table.Cell>{campaigns.campaignName}</Table.Cell>
-                <Table.Cell>{campaigns.campaignOwner}</Table.Cell>
+                <Table.Cell>{campaigns.campaignName}</Table.Cell>
                 <Table.Cell>{campaigns.campaignPurpose}</Table.Cell>
                 <Table.Cell>{campaigns.campaignGoal}</Table.Cell>
                 <Table.Cell>{moment(campaigns.campaignExpirationDate).format('MM-DD-YYYY')}</Table.Cell>

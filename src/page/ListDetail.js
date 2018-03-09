@@ -1,4 +1,4 @@
-import React from 'react';
+import React {Component} from 'react';
 import {ListGroup, ListGroupItem, Row, Col} from 'react-bootstrap';
 import {List, Card, ListGroupItemHeader, ListGroupItemText} from 'react-bootcards';
 

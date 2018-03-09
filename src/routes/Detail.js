@@ -6,24 +6,25 @@ import API from "../utils/API";
 
 class Detail extends Component {
   state = {
-    campaign: {}
+    campaigns: {}
   };
   // When this component mounts, grab the campaign with the _id of this.props.match.params.id
   // e.g. localhost:3000/campaigns/599dcb67f0f16317844583fc
   componentDidMount() {
-    API.getCampaign(this.props.match.params.id)
-      .then(res => this.setState({ campaign: res.data }))
+    API.getCampaignsID(this.props.match.params.id)
+      .then(res => this.setState({ campaigns: res.data }))
       .catch(err => console.log(err));
   }
 
   render() {
+    const { campaigns } = this.state;
     return (
       <Container fluid>
         <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.campaign.campaignName} with this Goal {this.state.campaign.campaignGoal} and this Expiration {this.state.campaign.campaignExpiration}
+                {campaigns.campaignName} with this Goal {this.state.campaigns.campaignGoal} and this Expiration {this.state.campaigns.campaignExpirationDate}
               </h1>
             </Jumbotron>
           </Col>
@@ -33,7 +34,7 @@ class Detail extends Component {
             <article>
               <h1>Campaign Purpose</h1>
               <p>
-                {this.state.campaign.campaignPurpose}
+                {this.state.campaigns.campaignPurpose}
               </p>
             </article>
           </Col>

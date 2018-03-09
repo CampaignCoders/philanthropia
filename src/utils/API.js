@@ -6,7 +6,7 @@ export default {
     return axios.get("/api/campaigns");
   },
   // Gets the Campaign with the given id
-  getCampaigns: function(id) {
+  getCampaignsID: function(id) {
     return axios.get("/api/campaigns/" + id);
   },
   // Deletes the Campaign with the given id

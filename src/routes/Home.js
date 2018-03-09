@@ -85,7 +85,6 @@ class Home extends Component {
                 </Container>
           
                 <Campaigns />
-               
 
                 </div>
                 <div className="container">

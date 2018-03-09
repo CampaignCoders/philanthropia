@@ -4,6 +4,7 @@ import { get } from 'axios';
 import times from 'lodash.times';
 import Page from './Page';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 import './Campaigns.css';
 
@@ -101,7 +102,9 @@ class Campaigns extends React.Component {
                 <Table.Cell>{campaigns.campaignPurpose}</Table.Cell>
                 <Table.Cell>{campaigns.campaignGoal}</Table.Cell>
                 <Table.Cell>{moment(campaigns.campaignExpirationDate).format('MM-DD-YYYY')}</Table.Cell>
-                <Table.Cell></Table.Cell>
+                <Table.Cell><Link to="/donate">
+                    <button className="donate">Donate Now</button>
+                </Link></Table.Cell>
               </Table.Row>),
             )}
           </Table.Body>

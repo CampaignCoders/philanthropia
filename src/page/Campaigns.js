@@ -1,10 +1,13 @@
 import React from 'react';
-import { Table, Menu, Image,Header, Icon } from 'semantic-ui-react';
+import { Table, Menu, Icon } from 'semantic-ui-react';
 import { get } from 'axios';
 import times from 'lodash.times';
 import Page from './Page';
+import moment from 'moment';
 
 import './Campaigns.css';
+
+const api = 'http://localhost:3001' || window.location.protocol + '//' + window.location.host
 
 //import DonationTracker from './DonationTracker';
 
@@ -36,13 +39,13 @@ class Campaigns extends React.Component {
   }
 
   getCampaigns() {
-    get('/api/newcampaign')
+    get(`${api}/api/campaigns`)
       .then(({ data }) => {
-        const { campaigns } = data;
+        const  campaigns = data;
         const totalPages = Math.ceil(campaigns.length / TOTAL_PER_PAGE);
 
         this.setState({
-          campaigns: data.campaigns,
+          campaigns: campaigns,
           page: 0,
           totalPages,
         });
@@ -92,20 +95,12 @@ class Campaigns extends React.Component {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {campaigns.slice(startIndex, startIndex + TOTAL_PER_PAGE).map(user =>
+            {campaigns.slice(startIndex, startIndex + TOTAL_PER_PAGE).map(campaigns =>
               (<Table.Row key={campaigns.id}>
-                <Table.Cell>
-                <Header as='h4' image>
-                  <Image src={campaigns.campaignImage} />
-                  <Header.Content>{campaigns.campaignName}
-              <Header.Subheader>campaign mgr placeholder</Header.Subheader>
-            </Header.Content>
-          </Header>
-                
-                </Table.Cell>
+                <Table.Cell>{campaigns.campaignName}</Table.Cell>
                 <Table.Cell>{campaigns.campaignPurpose}</Table.Cell>
                 <Table.Cell>{campaigns.campaignGoal}</Table.Cell>
-                <Table.Cell>{campaigns.campaignExpiration}</Table.Cell>
+                <Table.Cell>{moment(campaigns.campaignExpirationDate).format('MM-DD-YYYY')}</Table.Cell>
                 <Table.Cell></Table.Cell>
               </Table.Row>),
             )}

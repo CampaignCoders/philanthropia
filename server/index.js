@@ -4,32 +4,28 @@ const cors = require('cors');
 const uuidv1 = require('uuid/v1');
 const moment = require('moment');
 var AWS = require("aws-sdk");
-
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const auth = require('../routes/auth');
-const campaign = require('../routes/campaign');
 const ServerConstants = require("./constants");
+const bodyParser = require("body-parser");
+var proxy = require('http-proxy-middleware');
 
 const ourStripeSecretKey = ServerConstants.STRIPE_TEST_MODE ? ServerConstants.STRIPE_SK_TEST : ServerConstants.STRIPE_SK_PROD;
 const stripe = require("stripe")(ourStripeSecretKey);
 
-const bodyParser = require("body-parser");
-
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
-
 app.use(cors());
 
 
 
-AWS.config.update({
-    region: 'us-east-2',
-   
-  });
-  
 
+AWS.config.update({
+    region: 'us-east-2'
+});
 
 app.get("/api/donations/list/", function (req, res) {
 
@@ -40,15 +36,14 @@ app.get("/api/donations/list/", function (req, res) {
     var total_amount = 0.00;
 
     var params = {
-        TableName : "Donations",
+        TableName: "Donations",
         ProjectionExpression: "donation_amount, fullname, message, showname, created",
     };
 
     docClient.scan(params, function onScan(err, data) {
         if (err) {
             console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
-        }
-        else {
+        } else {
             //console.log(data.Items);
             data.Items.forEach(donation => {
                 var our_data = {
@@ -76,93 +71,76 @@ app.get("/api/donations/list/", function (req, res) {
     });
 });
 
-
 app.post("/api/donations/new/", (req, res) => {
 
     // Convert the charge amount from a float to integer in cents
     let amount = parseInt(parseFloat(req.body.amount) * 100);
 
     stripe.customers.create({
-        email: req.body.emailaddress,
-        card: req.body.source.id
-    })
-    .then(customer =>
-        stripe.charges.create({
-            amount,
-            description: "Donation",
-            currency: "usd",
-            customer: customer.id
-    }))
-    .then(charge => {
-        res.send(charge);
+            email: req.body.emailaddress,
+            card: req.body.source.id
+        })
+        .then(customer =>
+            stripe.charges.create({
+                amount,
+                description: "Donation",
+                currency: "usd",
+                customer: customer.id
+            }))
+        .then(charge => {
+            res.send(charge);
 
-        console.log(charge);
-        var docClient = new AWS.DynamoDB.DocumentClient({ convertEmptyValues: true });
-        var params = {
-            TableName: "Donations",
-            Item: {
-                "donation_id" : uuidv1(),
-                "fullname" : req.body.fullname,
-                "email" : req.body.emailaddress,
-                "stripe_charge" : charge,
-                "stripe_status" : charge.status,
-                "donation_amount" : parseFloat(req.body.amount_donation),
-                "charge_amount": parseFloat(req.body.amount),
-                "donation_stripe_fees" : null,
-                "created" : moment.unix(charge.created).format(),
-                "message" : req.body.personalMessage,
-                "showname" : req.body.showName
-            }
-        };
-        docClient.put(params, function(err, data) {
-            if (err) {
-                console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
-            } else {
-                console.log("Added item:", JSON.stringify(data, null, 2));
-            }
+            console.log(charge);
+            var docClient = new AWS.DynamoDB.DocumentClient({
+                convertEmptyValues: true
+            });
+            var params = {
+                TableName: "Donations",
+                Item: {
+                    "donation_id": uuidv1(),
+                    "fullname": req.body.fullname,
+                    "email": req.body.emailaddress,
+                    "stripe_charge": charge,
+                    "stripe_status": charge.status,
+                    "donation_amount": parseFloat(req.body.amount_donation),
+                    "charge_amount": parseFloat(req.body.amount),
+                    "donation_stripe_fees": null,
+                    "created": moment.unix(charge.created).format(),
+                    "message": req.body.personalMessage,
+                    "showname": req.body.showName
+                }
+            };
+            docClient.put(params, function (err, data) {
+                if (err) {
+                    console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
+                } else {
+                    console.log("Added item:", JSON.stringify(data, null, 2));
+                }
+            });
+        })
+        .catch(err => {
+            console.log("Error:", err);
+            res.send({
+                error: err.message
+            });
         });
-    })
-    .catch(err => {
-        console.log("Error:", err);
-        res.send({error: err.message});
-    });
 });
 
-const mongoose = require('mongoose');
+
+
+
+global.mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-mongoose.connect('mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
-  .then(() =>  console.log('connection succesful mon'))
-  .catch((err) => console.error(err));
+mongoose.connect('mongodb://localhost/mern-secure');
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/api/auth', auth(mongoose));
-app.use('/api/NewCampaign', campaign(mongoose));
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
+require('../routes')(app)
 
 app.listen(3001, function () {
     console.log("Fundraiser Server listening on port 3001");
 });
-

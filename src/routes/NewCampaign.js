@@ -35,7 +35,7 @@ class NewCampaign extends Component {
         e.preventDefault();
     
         const { campaignName, campaignPurpose, campaignOwner, campaignGoal, campaignExpirationDate } = this.state;
-        axios.post('/api/NewCampaign/NewCampaign', { campaignName, campaignPurpose, campaignOwner, campaignGoal, campaignExpirationDate })
+        axios.post('/api/NewCampaign', { campaignName, campaignPurpose, campaignOwner, campaignGoal, campaignExpirationDate })
           .then((result) => {
               console.log(result)
             this.props.history.push("/")

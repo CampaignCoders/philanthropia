@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import jwt from 'jsonwebtoken';
 
 import Loadable from 'react-loadable';
 import WebFont from 'webfontloader';
@@ -7,6 +8,28 @@ import './App.css';
 
 // Our Routed Pages
 import Loading from "./routes/Loading";
+
+const checkAuth = () => {
+    const token = localStorage.getItem('token');
+    if (!token ) {
+      return false;
+    }  
+    return true;
+  }
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route
+      {...rest} render={props =>(
+        checkAuth() ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{pathname: '/Login',
+          state: { from: props.location}
+        }} />
+        )
+      )} />
+  );
+
 
 const AsyncHome = Loadable({
     loader: () => import("./routes/Home"),
@@ -49,6 +72,7 @@ const AsyncDetail = Loadable({
     delay: 200,
     timeout: 10000
 });
+
 
 class App extends Component {
     constructor(props) {

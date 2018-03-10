@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Menu, Icon } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 import { get } from 'axios';
 import times from 'lodash.times';
 import Page from './Page';
@@ -111,23 +111,6 @@ class Campaigns extends React.Component {
             )}
           </Table.Body>
           <Table.Footer>
-            <Table.Row>
-              <Table.HeaderCell colSpan={6}>
-                <Menu floated="right" pagination>
-                  {page !== 0 && <Menu.Item as="a" icon onClick={this.decrementPage}>
-                    <Icon name="left chevron" />
-                  </Menu.Item>}
-                  {times(totalPages, n =>
-                    (<Menu.Item as="a" key={n} active={n === page} onClick={this.setPage(n)}>
-                      {n + 1}
-                    </Menu.Item>),
-                  )}
-                  {page !== (totalPages - 1) && <Menu.Item as="a" icon onClick={this.incrementPage}>
-                    <Icon name="right chevron" />
-                  </Menu.Item>}
-                </Menu>
-              </Table.HeaderCell>
-            </Table.Row>
           </Table.Footer>
         </Table>
 

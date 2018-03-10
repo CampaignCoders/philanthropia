@@ -141,6 +141,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 require('../routes')(app)
 
-app.listen(3001, function () {
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, function () {
     console.log("Fundraiser Server listening on port 3001");
 });

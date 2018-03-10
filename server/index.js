@@ -128,15 +128,15 @@ app.post("/api/donations/new/", (req, res) => {
 
 
 
+var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/mern-secure';
 
 global.mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 mongoose.connect(MONGODB_URI);
-mongoose.connect('mongodb://localhost/mern-secure');
+
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
-
 
 
 require('../routes')(app)

@@ -27,9 +27,6 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/Donate">Donate</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/NewCampaign">New Campaign</Link>
-              </li>
             </ul>
           </div>
         </div>

@@ -131,7 +131,7 @@ app.post("/api/donations/new/", (req, res) => {
 
 global.mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-
+mongoose.connect(MONGODB_URI);
 mongoose.connect('mongodb://localhost/mern-secure');
 
 app.use(logger('dev'));
